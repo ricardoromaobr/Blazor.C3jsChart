@@ -1,0 +1,34 @@
+﻿@typeparam TItem
+@code {
+
+
+    protected override void OnInitialized()
+    {
+        Parent.AddDataset(Parent.CreateDataset(Name, Datasource.ToArray()));
+
+        base.OnInitialized();
+    }
+
+    /// <summary>
+    /// Chart componente que recebe o dataset
+    /// </summary>
+    [CascadingParameter] Chart<TItem> Parent { get; set; }
+
+    /// <summary>
+    /// Nome do dataset
+    /// </summary>
+    [Parameter] public string Name { get; set; }
+
+    /// <summary>
+    /// Datasource dados para o gráfico
+    /// </summary>
+    [Parameter] public IEnumerable<TItem> Datasource { get; set; }
+    /// <summary>
+    /// Define se o datase será utilizado como dados para o eixo X
+    /// </summary>
+    [Parameter] public bool DatasetExisX { get; set; }
+    /// <summary>
+    /// Define o tipo de dado no Eixo X
+    /// </summary>
+    [Parameter] public XType XType { get; set; } = XType.Category;
+}

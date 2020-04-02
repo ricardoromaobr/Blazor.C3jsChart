@@ -1,0 +1,13 @@
+﻿@typeparam TItem
+
+@if (Title != null)
+{
+    <div>
+        <h3 style="text-align:center">@Title</h3>
+    </div>
+}
+
+<div @ref="elementRef" id="@elementId"></div>
+<CascadingValue Value="this">
+    @ChildContent
+</CascadingValue>

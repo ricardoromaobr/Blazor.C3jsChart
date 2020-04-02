@@ -1,0 +1,66 @@
+﻿@page "/"
+<h1>Exemplo Blazor.C3jsChart</h1>
+<div class="row">
+    <div class="col col-md-6">
+
+        <div class="card">
+            <Chart TItem="double"
+                   Title="Pesquisas online"
+                   Type="ChartType.Pie">
+                <ChartDataset Name="Acesso Mercado Livre" Datasource="datasourceAcessoML" />
+                <ChartDataset Name="Acesso Bondfaro" Datasource="datasourceAcessoBf" />
+                <ChartDataset Name="Acesso Buscape" Datasource="datasourceAcessoBP" />
+                <ChartDataset Name="Acesso Zoom" Datasource="datasourceAcessoZoom" />
+            </Chart>
+
+        </div>
+    </div>
+
+    <div class="col col-md-6">
+        <div class="card">
+            <Chart TItem="double"
+                   Title="Pesquisas online"
+                   Type="ChartType.Dunot">
+                <ChartDataset Name="Acesso Mercado Livre" Datasource="datasourceAcessoML" />
+                <ChartDataset Name="Acesso Bondfaro" Datasource="datasourceAcessoBf" />
+                <ChartDataset Name="Acesso Buscape" Datasource="datasourceAcessoBP" />
+                <ChartDataset Name="Acesso Zoom" Datasource="datasourceAcessoZoom" />
+            </Chart>
+
+        </div>
+    </div>
+</div>
+
+<br/>
+
+<div class="card">
+    <Chart TItem="double"
+           Title="Acessos ao sistema">
+        <ChartDataset Name="Acesso Sistema" Datasource="valores" />
+        <ChartDataset Name="Uso de sistema Minutos" Datasource="tempoDeUso" />
+    </Chart>
+</div>
+
+<br />
+
+<div class="card">
+    <Chart TItem="double"
+           Title="Acessos ao sistema"
+           Type="ChartType.Bar">
+        <ChartDataset Name="Acesso Sistema" Datasource="valores" />
+        <ChartDataset Name="Uso de sistema Minutos" Datasource="tempoDeUso" />
+    </Chart>
+
+</div>
+<br />
+<br />
+@code {
+
+    IList<double> valores = new List<double> { 10, 20, 25, 30, 40 };
+    IList<double> tempoDeUso = new List<double> { 10, 0.1, 2, 4, 0.5 };
+
+    IList<double> datasourceAcessoML = new List<double> { 10500 };
+    IList<double> datasourceAcessoBf = new List<double> { 3000 };
+    IList<double> datasourceAcessoBP = new List<double> { 5000 };
+    IList<double> datasourceAcessoZoom = new List<double> { 18000 };
+}
