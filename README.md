@@ -79,7 +79,7 @@ in the head section of the html
 ```html
 <link href="_content/Blazor.C3jsChart/c3js/c3.min.css" rel="stylesheet" />
 ```
-And befoer the tab body and after the blazor.js framework put: 
+And before the tag body and after the blazor.js framework put: 
 ```html
     <script src="_content/Blazor.C3jsChart/C3jsChart.js"></script>
 </body>
