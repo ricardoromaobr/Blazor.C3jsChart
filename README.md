@@ -1,4 +1,4 @@
 # Blazor.C3jsChart
 C3js component for Blazor
 
-![Blazorise](/assets/)
+![Blazor.C3jsChart](/assets/demo-blazor.c3jsChart.png)
