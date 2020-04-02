@@ -65,7 +65,7 @@ For now to use clone the intire repository and run the default startup project i
 I not create a NuGet yet.    
 Later I will produce them.    
 
-To use in your solution copy the project Blazor.C3jsChar from the directory(folder) that you clone
+To use in your solution copy the project Blazor.C3jsChart from the directory(folder) that you clone
 the repository to your solution.
 
 # Setting your project
