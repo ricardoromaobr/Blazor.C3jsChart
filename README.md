@@ -81,6 +81,8 @@ in the head section of the html
 ```
 And before the tag body and after the blazor.js framework put: 
 ```html
+    <script src="_content/Blazor.C3jsChart/c3js/d3.min.js"></script>
+    <script src="_content/Blazor.C3jsChart/c3js/c3.min.js"></script>
     <script src="_content/Blazor.C3jsChart/C3jsChart.js"></script>
 </body>
 ```
