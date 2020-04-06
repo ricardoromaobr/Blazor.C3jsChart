@@ -3,7 +3,8 @@
 
     inicializar: (id, dados, element, chartType, showLegend, legendPosition, zoom,
         zoomType, width, height, showToolTip, labels, showGridX, showGridY, xcategory,
-        xcategorytype, rotateTickText, xlabel, xlabelPosition, ylabel, ylabelPosition) => {
+        xcategorytype, rotateTickText, xlabel, xlabelPosition, ylabel, ylabelPosition,
+        multilineMax) => {
 
         chart = C3jsChart._instances[id];
 
@@ -42,7 +43,7 @@
             };
         }
 
-        chartObj.Grid = {
+        chartObj.grid = {
             x: {
                 show: showGridX
             },
@@ -67,6 +68,16 @@
                 rotate: rotateTickText,
                 multiline: false
             };
+        }
+
+        if (multilineMax) {
+            if (chartObj.axis.x.tick) {
+                chartObj.axis.x.tick.multilineMax = multilineMax;
+            } else {
+                chartObj.axis.x.tick = {
+                    multilineMax: multilineMax
+                };
+            }
         }
 
 

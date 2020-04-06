@@ -48,12 +48,13 @@ namespace Blazor.C3jsChart
             // inicializa o componente via javascript 
             await JSRuntime.InvokeVoidAsync("C3jsChart.inicializar",
                 elementId, dados, elementRef, ObterChartType(Type),
-                ShowLegend, ObterLegendPosition(LengendPosition),
+                ShowLegend, ObterLegendPosition(LegendPosition),
                 Zoom, ObterZoomType(ZoomType), Width, Height, ShowToolTip,
                 ShowDataLabels, ShowGridX, ShowGridY, XCategory,
                 XCategoryType.ToString().ToLower(), RotateTickText,
                 XLabel, ObterXLabelPosition(XLabelPosition), YLabel,
-                ObterYLabelPosition(YLabelPosition));
+                ObterYLabelPosition(YLabelPosition),
+                MultilineMax);
 
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -71,6 +72,15 @@ namespace Blazor.C3jsChart
             }
         }
 
+        public void AddDataset(IEnumerable<DataSet<TItem>> items)
+        {
+            foreach (var dataset in items)
+                if (!datasets.Contains(dataset))
+                    datasets.Add(dataset);
+                else
+                    throw new DatasetAlreadyInDatasetsException("Dataset already exists");
+        }
+
         /// <summary>
         /// Criar um dataset, para que não seja necessário criar dataset manualmente;
         /// </summary>
@@ -86,6 +96,10 @@ namespace Blazor.C3jsChart
             };
         }
 
+        public void ClearDataset()
+        {
+            datasets.Clear();
+        }
         /// <summary>
         /// Converte o tipo para o formato do c3
         /// </summary>
@@ -230,7 +244,7 @@ namespace Blazor.C3jsChart
         /// <summary>
         /// define a posição da lengenda
         /// </summary>
-        [Parameter] public LegendPosition LengendPosition { get; set; }
+        [Parameter] public LegendPosition LegendPosition { get; set; }
 
         /// <summary>
         /// define se o gráfico vai mostrar o label dos valores do dataset no gráfico
@@ -279,6 +293,7 @@ namespace Blazor.C3jsChart
         [Parameter] public XLabelPosition XLabelPosition { get; set; }
         [Parameter] public string YLabel { get; set; }
         [Parameter] public YLabelPosition YLabelPosition { get; set; }
+        [Parameter] public int MultilineMax {get;set;}
     }
 }
 
