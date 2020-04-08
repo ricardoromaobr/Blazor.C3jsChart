@@ -2,9 +2,8 @@
 {
     public enum LegendPosition
     {
+        Bottom,
         Right,
-        Left,
-        Top,
-        Bottom
+        Inset
     }
 }

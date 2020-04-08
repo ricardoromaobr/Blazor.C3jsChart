@@ -42,6 +42,13 @@ namespace Blazor.C3jsChart
         /// <returns></returns>
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            await Initialize();
+
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
+        private async Task Initialize()
+        {
             //serializa os dados em uma forma que c3js possa entender
             var dados = datasets.ToDictionary(d => d.Name, d => d.Datasouce);
 
@@ -54,9 +61,8 @@ namespace Blazor.C3jsChart
                 XCategoryType.ToString().ToLower(), RotateTickText,
                 XLabel, ObterXLabelPosition(XLabelPosition), YLabel,
                 ObterYLabelPosition(YLabelPosition),
-                MultilineMax);
-
-            await base.OnAfterRenderAsync(firstRender);
+                MultilineMax, PaddingTop, PaddingLeft,
+                PaddingBotttom, PaddingRight, ColorPattern);
         }
 
         #region Methods
@@ -72,6 +78,10 @@ namespace Blazor.C3jsChart
             }
         }
 
+        public async void Update()
+        {
+           await  Initialize();
+        }
         public void AddDataset(IEnumerable<DataSet<TItem>> items)
         {
             foreach (var dataset in items)
@@ -98,7 +108,7 @@ namespace Blazor.C3jsChart
 
         public void ClearDataset()
         {
-            datasets.Clear();
+            datasets.Clear();            
         }
         /// <summary>
         /// Converte o tipo para o formato do c3
@@ -153,19 +163,20 @@ namespace Blazor.C3jsChart
         /// <returns></returns>
         string ObterLegendPosition(LegendPosition legendPosition)
         {
+            string result = null;
             switch (legendPosition)
             {
-                case LegendPosition.Left:
-                    return "left";
                 case LegendPosition.Right:
-                    return "right";
-                case LegendPosition.Top:
-                    return "top";
+                    result = "right";
+                    break;
+                case LegendPosition.Inset:
+                    result = "inset";
+                    break;
                 case LegendPosition.Bottom:
-                    return "bottom";
-                default:
-                    return "bottom";
+                    result = "bottom";
+                    break;
             }
+            return result;
         }
 
         string ObterXLabelPosition(XLabelPosition xLabelPosition)
@@ -212,6 +223,8 @@ namespace Blazor.C3jsChart
         #endregion
 
         #region properties
+
+        public IEnumerable<DataSet<TItem>> Datasets => datasets;
         /// <summary>
         /// Tipo do gráfico
         /// </summary>
@@ -293,7 +306,12 @@ namespace Blazor.C3jsChart
         [Parameter] public XLabelPosition XLabelPosition { get; set; }
         [Parameter] public string YLabel { get; set; }
         [Parameter] public YLabelPosition YLabelPosition { get; set; }
-        [Parameter] public int MultilineMax {get;set;}
+        [Parameter] public int? MultilineMax { get; set; } = null;
+        [Parameter] public int? PaddingLeft { get; set; } = null;
+        [Parameter] public int? PaddingRight { get; set; } = null;
+        [Parameter] public int? PaddingTop { get; set; } = null;
+        [Parameter] public int? PaddingBotttom { get; set; } = null;
+        [Parameter] public string[] ColorPattern { get; set; }
     }
 }
 
