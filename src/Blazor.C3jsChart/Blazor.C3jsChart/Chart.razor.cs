@@ -14,6 +14,7 @@ namespace Blazor.C3jsChart
         ElementReference elementRef;
         string elementId;
         List<DataSet<TItem>> datasets = new List<DataSet<TItem>>();
+        private BarOptions barOptions;
 
         [Inject]
         IJSRuntime JSRuntime { get; set; }
@@ -62,7 +63,8 @@ namespace Blazor.C3jsChart
                 XLabel, ObterXLabelPosition(XLabelPosition), YLabel,
                 ObterYLabelPosition(YLabelPosition),
                 MultilineMax, PaddingTop, PaddingLeft,
-                PaddingBotttom, PaddingRight, ColorPattern);
+                PaddingBotttom, PaddingRight, ColorPattern,
+                BarOptions);
         }
 
         #region Methods
@@ -220,6 +222,14 @@ namespace Blazor.C3jsChart
                     return "inner-top";
             }
         }
+
+        public void AddBarOptions(BarOptions barOptions)
+        {
+            if (Type == ChartType.Bar)
+                this.barOptions = barOptions;
+            else
+                throw new InvalidChartOptions($"This options is not valid to this chart type:{Type.ToString()}");
+        }
         #endregion
 
         #region properties
@@ -283,7 +293,6 @@ namespace Blazor.C3jsChart
         /// Nome do dataset com os dados para mostrar no eixo X
         /// </summary>
         [Parameter] public string DatasetNameExisX { get; set; }
-        #endregion
         /// <summary>
         /// Container para os dataset a serem utilizado
         /// </summary>
@@ -312,6 +321,12 @@ namespace Blazor.C3jsChart
         [Parameter] public int? PaddingTop { get; set; } = null;
         [Parameter] public int? PaddingBotttom { get; set; } = null;
         [Parameter] public string[] ColorPattern { get; set; }
+        /// <summary>
+        /// Options to chart when Type is Bar
+        /// </summary>
+        [Parameter] public BarOptions BarOptions { get; set; }
+
+        #endregion
     }
 }
 

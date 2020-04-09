@@ -5,7 +5,7 @@
         zoomType, width, height, showToolTip, labels, showGridX, showGridY, xcategory,
         xcategorytype, rotateTickText, xlabel, xlabelPosition, ylabel, ylabelPosition,
         multilineMax, paddingTop, paddingLeft, paddingBottom, paddingRight,
-        colorPattern) => {
+        colorPattern, barOptions) => {
 
         chart = C3jsChart._instances[id];
 
@@ -109,6 +109,18 @@
                 text: ylabel,
                 position: ylabelPosition
             };
+        }
+
+        if (barOptions) {
+            chartObj.bar = {}
+            if (barOptions.width) 
+                chartObj.bar.width = barOptions.Width;
+            if (barOptions.ratioWidth)
+                chartObj.bar.width = {
+                    ratio: barOptions.ratioWidth
+                };
+            if (barOptions.zeroBase)
+                chartObj.bar.zerobase = barOptions.ZeroBase;            
         }
 
         if (!chart) {
