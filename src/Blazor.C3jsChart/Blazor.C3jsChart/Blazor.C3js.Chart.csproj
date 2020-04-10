@@ -9,6 +9,8 @@
     <RepositoryUrl>https://github.com/ricardoromaobr/Blazor.C3jsChart</RepositoryUrl>
     <PackageTags>Blazor C3js ASPNET Core</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Rrs.Blazor.C3js.Chart</PackageId>
+    <Copyright>ricardoromaobr</Copyright>
   </PropertyGroup>
 
 
