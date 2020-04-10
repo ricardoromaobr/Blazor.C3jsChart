@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29924.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.C3jsChart", "Blazor.C3jsChart\Blazor.C3jsChart.csproj", "{A560C292-1929-4791-A046-0AC5A4DB34C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.C3js.Chart", "Blazor.C3jsChart\Blazor.C3js.Chart.csproj", "{A560C292-1929-4791-A046-0AC5A4DB34C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.C3jsChart.Test", "Blazor.C3jsChart.Test\Blazor.C3jsChart.Test.csproj", "{3B2E5B5E-1091-4661-8689-F4234238FE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.C3jsChart.Test", "Blazor.C3jsChart.Test\Blazor.C3jsChart.Test.csproj", "{3B2E5B5E-1091-4661-8689-F4234238FE71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

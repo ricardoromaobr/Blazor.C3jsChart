@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazor.C3jsChart
+namespace Blazor.C3js.Chart
 {
     public partial class Chart<TItem> : ComponentBase
     {
@@ -64,7 +64,8 @@ namespace Blazor.C3jsChart
                 ObterYLabelPosition(YLabelPosition),
                 MultilineMax, PaddingTop, PaddingLeft,
                 PaddingBotttom, PaddingRight, ColorPattern,
-                BarOptions);
+                BarOptions, PieOptions, DonutOptions, GaugeOptions,
+                ToolTipFormatValue);
         }
 
         #region Methods
@@ -82,7 +83,7 @@ namespace Blazor.C3jsChart
 
         public async void Update()
         {
-           await  Initialize();
+            await Initialize();
         }
         public void AddDataset(IEnumerable<DataSet<TItem>> items)
         {
@@ -110,7 +111,7 @@ namespace Blazor.C3jsChart
 
         public void ClearDataset()
         {
-            datasets.Clear();            
+            datasets.Clear();
         }
         /// <summary>
         /// Converte o tipo para o formato do c3
@@ -311,20 +312,64 @@ namespace Blazor.C3jsChart
         /// Rotate tick text no eixo X
         /// </summary>
         [Parameter] public int RotateTickText { get; set; }
+        /// <summary>
+        /// X label caption 
+        /// </summary>
         [Parameter] public string XLabel { get; set; }
+        /// <summary>
+        /// The x axis label position
+        /// </summary>
         [Parameter] public XLabelPosition XLabelPosition { get; set; }
+        /// <summary>
+        /// The Y Label caption
+        /// </summary>
         [Parameter] public string YLabel { get; set; }
+        /// <summary>
+        /// The posistion of the Y axies label
+        /// </summary>
         [Parameter] public YLabelPosition YLabelPosition { get; set; }
+        /// <summary>
+        /// When using the x category type, define the max number of line
+        /// </summary>
         [Parameter] public int? MultilineMax { get; set; } = null;
+        /// <summary>
+        /// Padding left of the chart
+        /// </summary>
         [Parameter] public int? PaddingLeft { get; set; } = null;
+        /// <summary>
+        /// Padding right of the chart
+        /// </summary>
         [Parameter] public int? PaddingRight { get; set; } = null;
+        /// <summary>
+        /// Padding top of the chart
+        /// </summary>
         [Parameter] public int? PaddingTop { get; set; } = null;
+        /// <summary>
+        /// Padding bomttom of the chart
+        /// </summary>
         [Parameter] public int? PaddingBotttom { get; set; } = null;
+        /// <summary>
+        /// Colors
+        /// </summary>
         [Parameter] public string[] ColorPattern { get; set; }
         /// <summary>
         /// Options to chart when Type is Bar
         /// </summary>
         [Parameter] public BarOptions BarOptions { get; set; }
+        /// <summary>
+        /// Options to chart when Type is Pie
+        /// </summary>
+        [Parameter] public PieOptions PieOptions { get; set; }
+        /// <summary>
+        /// Options to chat when Type is Donut
+        /// </summary>
+        [Parameter] public DonutOptions DonutOptions { get; set; }
+        /// <summary>
+        /// Options to chart when Type  is Gauge
+        /// </summary>
+        [Parameter] public GaugeOptions GaugeOptions { get; set; }
+
+        [Parameter] public TooTipFormatValue ToolTipFormatValue { get; set; }
 
         #endregion
     }

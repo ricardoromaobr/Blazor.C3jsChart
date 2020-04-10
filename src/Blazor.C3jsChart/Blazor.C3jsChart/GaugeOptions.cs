@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blazor.C3jsChart
+namespace Blazor.C3js.Chart
 {
     public class GaugeOptions
     {

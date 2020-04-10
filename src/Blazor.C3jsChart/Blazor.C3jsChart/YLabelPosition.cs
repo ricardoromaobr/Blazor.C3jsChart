@@ -1,4 +1,4 @@
-﻿namespace Blazor.C3jsChart
+﻿namespace Blazor.C3js.Chart
 {
     public enum YLabelPosition
     {

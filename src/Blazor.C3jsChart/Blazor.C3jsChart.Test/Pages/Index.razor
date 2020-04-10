@@ -1,12 +1,16 @@
 ﻿@page "/"
 <h1>Exemplo Blazor.C3jsChart</h1>
+<b>teste</b>
+
 <div class="row">
     <div class="col col-md-6">
 
         <div class="card">
             <Chart TItem="double"
                    Title="Pesquisas online"
-                   Type="ChartType.Pie">
+                   Type="ChartType.Pie"
+                   PieOptions="@(new PieOptions {LabelFormat = LabelFormat.Value })"
+                   ToolTipFormatValue="TooTipFormatValue.Value">
                 <ChartDataset Name="Acesso Mercado Livre" Datasource="datasourceAcessoML" />
                 <ChartDataset Name="Acesso Bondfaro" Datasource="datasourceAcessoBf" />
                 <ChartDataset Name="Acesso Buscape" Datasource="datasourceAcessoBP" />

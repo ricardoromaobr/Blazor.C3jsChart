@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Blazor.C3jsChart
+namespace Blazor.C3js.Chart
 {
     [Serializable]
     internal class DatasetAlreadyInDatasetsException : Exception

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazor.C3jsChart
+namespace Blazor.C3js.Chart
 {
     public class ChartData<T>
     {
