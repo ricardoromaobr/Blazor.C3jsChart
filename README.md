@@ -75,13 +75,13 @@ In the _imports.razor add:
 In the _host.cshtml Blazor Server or index.cshtml for WebAssembly 
 in the head section of the html
 ```html
-<link href="_content/Blazor.C3js.Chart/c3js/c3.min.css" rel="stylesheet" />
+<link href="_content/Rrs.Blazor.C3js.Chart/c3js/c3.min.css" rel="stylesheet" />
 ```
 And before the tag body and after the blazor.js framework put: 
 ```html
-    <script src="_content/Blazor.C3js.Chart/c3js/d3.min.js"></script>
-    <script src="_content/Blazor.C3js.Chart/c3js/c3.min.js"></script>
-    <script src="_content/Blazor.C3js.Chart/C3jsChart.js"></script>
+    <script src="_content/Rrs.Blazor.C3js.Chart/c3js/d3.min.js"></script>
+    <script src="_content/Rrs.Blazor.C3js.Chart/c3js/c3.min.js"></script>
+    <script src="_content/Rrs.sBlazor.C3js.Chart/C3jsChart.js"></script>
 </body>
 ```
 I'm wait for your contribution.
