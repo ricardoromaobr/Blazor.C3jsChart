@@ -52,7 +52,13 @@ namespace Blazor.C3js.Chart
         {
             //serializa os dados em uma forma que c3js possa entender
             var dados = datasets.ToDictionary(d => d.Name, d => d.Datasouce);
-
+            StackedBarOptions stackedBarOptions = null;
+            if (Type == ChartType.StackedBar)
+            {
+                stackedBarOptions = new StackedBarOptions();
+                stackedBarOptions.Groups = dados.Keys.ToArray();
+            }
+            
             // inicializa o componente via javascript 
             await JSRuntime.InvokeVoidAsync("C3jsChart.inicializar",
                 elementId, dados, elementRef, ObterChartType(Type),
@@ -65,7 +71,7 @@ namespace Blazor.C3js.Chart
                 MultilineMax, PaddingTop, PaddingLeft,
                 PaddingBotttom, PaddingRight, ColorPattern,
                 BarOptions, PieOptions, DonutOptions, GaugeOptions,
-                ToolTipFormatValue);
+                stackedBarOptions,ToolTipFormatValue);
         }
 
         #region Methods
@@ -235,6 +241,13 @@ namespace Blazor.C3js.Chart
 
         #region properties
 
+        public string [] Grouped {
+            get {
+                if (Type == ChartType.StackedBar)
+                    return datasets.Select(d => d.Name).ToArray();
+                return null;
+            }
+        }
         public IEnumerable<DataSet<TItem>> Datasets => datasets;
         /// <summary>
         /// Tipo do gráfico

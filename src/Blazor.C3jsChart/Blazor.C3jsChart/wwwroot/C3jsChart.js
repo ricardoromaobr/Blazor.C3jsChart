@@ -5,7 +5,7 @@
         zoomType, width, height, showToolTip, labels, showGridX, showGridY, xcategory,
         xcategorytype, rotateTickText, xlabel, xlabelPosition, ylabel, ylabelPosition,
         multilineMax, paddingTop, paddingLeft, paddingBottom, paddingRight,
-        colorPattern, barOptions, pieOptions, donutOptions, gaugeOptions,
+        colorPattern, barOptions, pieOptions, donutOptions, gaugeOptions,stackedBarOptions,
         tooTipFormatValue) => {
 
         chart = C3jsChart._instances[id];
@@ -24,10 +24,18 @@
         if (colorPattern)
             chartObj.color = { pattern: colorPattern };
 
+        // stackedBar na verdade é um bar empilhado
+        // sendo assim troco o tipo para bar
+        if (chartType === "stackedBar")
+            chartType = "bar";
+
         dataObj = {
             json: dados,
             type: chartType
         };
+
+        if (stackedBarOptions && chartType == "bar")
+            dataObj.groups = [stackedBarOptions.groups];
 
         if (labels)
             dataObj.labels = true;
