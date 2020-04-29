@@ -3,7 +3,7 @@
 <b>teste</b>
 
 <div class="row">
-    <div class="col col-md-6">
+    <div class="col col-md-3">
 
         <div class="card">
             <Chart TItem="double"
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="col col-md-6">
+    <div class="col col-md-3">
         <div class="card">
             <Chart TItem="double"
                    Title="Pesquisas online"
@@ -33,9 +33,21 @@
 
         </div>
     </div>
+    <div class="col col-md-3">
+
+        <div class="card">
+            <Chart TItem="double"
+                   Title="Acessos ao sistema"
+                   Type="ChartType.StackedBar">
+                <ChartDataset Name="Acesso Sistema" Datasource="valores" />
+                <ChartDataset Name="Uso de sistema Minutos" Datasource="tempoDeUso" />
+            </Chart>
+
+        </div>
+    </div>
 </div>
 
-<br/>
+<br />
 
 <div class="card">
     <Chart TItem="double"
@@ -47,15 +59,6 @@
 
 <br />
 
-<div class="card">
-    <Chart TItem="double"
-           Title="Acessos ao sistema"
-           Type="ChartType.Bar">
-        <ChartDataset Name="Acesso Sistema" Datasource="valores" />
-        <ChartDataset Name="Uso de sistema Minutos" Datasource="tempoDeUso" />
-    </Chart>
-
-</div>
 <br />
 <br />
 @code {
