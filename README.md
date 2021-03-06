@@ -84,5 +84,5 @@ And before the tag body and after the blazor.js framework put:
     <script src="_content/Rrs.sBlazor.C3js.Chart/C3jsChart.js"></script>
 </body>
 ```
-I'm wait for your contribution.
+I'm waiting for your contribution.
 Thanks.
