@@ -17,7 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies/Blazor.C3jsChar.sln
+    - name: Restore dependencies
+      run: dotnet restore src/Blazor.C3jsChar
     - name: Build
       run: dotnet build --no-restore src/Blazor.C3jsChart
     - name: Test
