@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: |
-           ls src/Blazor.C3jsChart          
+           dotnet restore src/Blazor.C3jsChart/          
     - name: Build
       run: dotnet build --no-restore src/Blazor.C3jsChart/Blazor.C3jsChart.sln
     - name: Test
