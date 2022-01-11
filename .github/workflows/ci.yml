@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore src/Blazor.C3jsChar
+      run: dotnet restore src/Blazor.C3jsChar/Blazor.C3jsChart.sln
     - name: Build
-      run: dotnet build --no-restore src/Blazor.C3jsChart
+      run: dotnet build --no-restore src/Blazor.C3jsChart/Blazor.C3jsChart.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal
