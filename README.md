@@ -1,5 +1,7 @@
 # Blazor.C3jsChart
-C3js component for Blazor
+C3js component for Blazor.
+I like a lof of the C3js, but the options to use a c# code with the front-end is something that call me attention.
+So I write this commponent that is more expressive and easy to use.
 
 ![Blazor.C3jsChart](/assets/demo-blazor.c3jsChart.png)
 
