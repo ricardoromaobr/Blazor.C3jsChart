@@ -4,7 +4,7 @@ I like a lof of the C3js, but the options to use a c# code with the front-end is
 So I write this commponent that is more expressive and easy to use.
 
 
-[![Build status](https://dev.azure.com/RRS-PRO/Blazor.Chart.C3js/_apis/build/status/Blazor.Chart.C3js-ASP.NET%20Core-CI)](https://dev.azure.com/RRS-PRO/Blazor.Chart.C3js/_build/latest?definitionId=9)
+![status](https://dev.azure.com/RRS-PRO/Blazor.Chart.C3js/_apis/build/status/Blazor.Chart.C3js-ASP.NET%20Core-CI)
 
 ![Blazor.C3jsChart](/assets/demo-blazor.c3jsChart.png)
 
