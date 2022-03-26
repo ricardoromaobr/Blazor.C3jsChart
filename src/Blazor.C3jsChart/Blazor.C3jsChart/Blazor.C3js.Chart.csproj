@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>Net6.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.1.1</Version>
+    <Version>1.0</Version>
     <Authors>ricardoromaobr</Authors>
     <Description>An blazor C3js Chart component.</Description>
     <RepositoryUrl>https://github.com/ricardoromaobr/Blazor.C3jsChart</RepositoryUrl>
