@@ -11,9 +11,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Rrs.Blazor.C3js.Chart</PackageId>
     <Copyright>ricardoromaobr</Copyright>
-    <AssemblyVersion>0.1.1.1</AssemblyVersion>
-    <FileVersion>0.1.1.1</FileVersion>
+    <AssemblyVersion>1.0</AssemblyVersion>
+    <FileVersion>1.0</FileVersion>
     <PackageReleaseNotes>Added options to bar to be stacked to create a chart stacked bar. Just define  a chart with StackedBar type and nothing more is necessary and the chart will be generated.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/ricardoromaobr/Blazor.C3jsChart</PackageProjectUrl>
   </PropertyGroup>
 
 
